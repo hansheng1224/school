@@ -3,3 +3,19 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+.list-students{
+    border-collapse: collapse;
+    border: 2px solid black;
+    padding: 20px;
+}
+
+.list-students td{
+    border: 1px solid #aaa;
+    padding: 5px 10px;
+    text-align: center;
+}
+
+.list-students td:nth-last-child(1){
+    text-align: right;
+}
