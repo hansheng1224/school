@@ -4,6 +4,6 @@ $pdo=new PDO($dsn,'root','');
 
 $sql="INSERT INTO `students`(`id`,`school_num`,`name`,`birthday`,`uni_id`,`addr`,`parents`,`tel`,`dept`,`graduate_at`,`status_code`)VALUES(NULL,'915084','陳彥明','1984-06-12','F133322235','新北市泰山區龍華里貴子路100-1號3樓','陳國雄','02-1234567',3,5,'001')";
 
-$res=$pdo->exec($sql);
-echo "新增成功:".$res;
+// $res=$pdo->exec($sql);
+// echo "新增成功:".$res;
 ?>
