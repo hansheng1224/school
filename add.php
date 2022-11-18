@@ -21,9 +21,25 @@ $pdo = new PDO($dsn, 'root', '');
             <tr>
                 <td>school_num</td>
                 <?php
-                    $sql="SELECT * FROM `students`";
-                    $max=$pdo->query($sql)->
-                    
+                // $sql="SELECT * FROM `students`";
+                $sql="SELECT max(`school_num`) FROM `students`";
+                $max=$pdo->query($sql)->fetchColumn();
+
+                // $rows=$pdo->query($sql)->fetchAll();
+                // $row=$pdo->query($sql)->fetch();
+
+                // echo "<pre>";
+                // echo "fetchColumn";
+                // echo "<hr>";
+                // print_r($max);
+                // echo "fetchAll";
+                // echo "<hr>";
+                // print_r($rows);
+                // echo "fetch";
+                // echo "<hr>";
+                // print_r($row);
+                // echo "</pre>";
+                
                 ?>
                 <td><input type="text" name="school_num" id="" value="<?=$max+1;?>"></td>
             </tr>
