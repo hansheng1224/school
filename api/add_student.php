@@ -22,9 +22,9 @@ $max_num=$pdo->query("SELECT max(`seat_num`) FROM `class_student` WHERE `class_c
 $seat_num=$max_num+1;
 
 
-$sql="INSERT INTO `students`(`id`,`school_num`,`name`,`birthday`,`uni_id`,`addr`,`parents`,`tel`,`dept`,graduate_at`,`status_code`)VALUES(NULL,'$school_num',$name',$birthday','$uni_id','$addr','$parents','$tel','$dept','$graduate_at','$status_code')";
+$sql="INSERT INTO `students`(`id`,`school_num`,`name`,`birthday`,`uni_id`,`addr`,`parents`,`tel`,`dept`,`graduate_at`,`status_code`)VALUES(NULL,'$school_num','$name','$birthday','$uni_id','$addr','$parents','$tel','$dept','$graduate_at','$status_code')";
 
-$sql_class="INSERT INTO `class_student`(`school_num`,`class_code`,`seat_num`,`year`) VALUE ('school_num','$class_code','$seat_num','$yeat')";
+$sql_class="INSERT INTO `class_student`(`school_num`,`class_code`,`seat_num`,`year`) VALUE ('$school_num','$class_code','$seat_num','$year')";
 
 echo $sql;
 echo $sql_class;

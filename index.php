@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>學生管理系統</title>
-    <link rel="stylesheet" href="style01.css">
+    <link rel="stylesheet" href="style.css">
 
     <?php
     $dsn = "mysql:host=localhost;charset=utf8;dbname=school";
@@ -90,10 +90,71 @@
             break;
         }
     }
-
-
+    ?>
+    <div class="pages">
+    <?php
+    if(($now-1)>=1){
+        $prev=$now-1;
+        if(isset($_GET['code'])){
+            echo "<a href='?page=$prev&code={$_GET['code']}'>";
+            echo "&lt";
+            echo "</a>";
+        }else{
+            echo "<a href='?page=$prev'>";
+            echo "&lt";
+            echo "</a>";
+        }
+    }else{
+        echo "<a class='noshow'>&nbsp;</a>";
+    }
     ?>
 
+    <?php
+    for($i=1;$i<=$pages;$i++){
+        // $nowPageo=($i===$now)?'now':'';
+        if(isset($_GET['code'])){
+            echo "<a href='?page=$i&code={$_GET['code']}'>";
+            echo $i;
+            echo "</a>";
+        }else{
+            echo "<a href='?page=$i'>";
+            echo $i;
+            echo "</a>";
+        }
+    }
+    ?>
+
+    <!-- <?php
+    if($now<=($pages)){
+        if(isset($_GET['code'])){
+            echo "<a href='?page=$pages&code={$_GET['code']}'>";
+            echo "$pages";
+            echo "</a>";
+        }else{
+            echo "<a href='?page=$pages'>";
+            echo "$pages";
+            echo "</a>";
+        }
+    }
+    ?> -->
+
+    <?php
+    if(($now+1)<=$pages){
+        $next=$now+1;
+        if(isset($_GET['code'])){
+            echo "<a href='?page=$next&code={$_GET['code']}'>";
+            echo "&gt";
+            echo "</a>";
+        }else{
+            echo "<a href='?page=$next'>";
+            echo "&gt";
+            echo "</a>";
+        }
+    }else{
+        echo "<a class='noshow'>&nbsp</a>";
+    }
+    ?>
+    </div>
 
     <table class='list-students'>
         <tr>

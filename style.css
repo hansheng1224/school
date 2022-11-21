@@ -55,3 +55,16 @@ nav ul.class-list li a{
     font-weight: bolder;
     text-decoration:underline;
 }
+
+nav,pages{
+    text-align: center;
+}
+
+.pages{
+    font-size:20px;
+    font-weight: bolder;
+    margin:1rem auto;
+    display: flex;
+    justify-content:center;
+    width:800px;
+}
