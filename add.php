@@ -15,11 +15,11 @@ $pdo = new PDO($dsn, 'root', '');
 
 <body>
     <h1>新增學生</h1>
-    <form action="" method="post">
+    <form action="api/add_student.php" method="post">
         <table>
 
             <tr>
-                <td>school_num</td>
+                <td>學號</td>
                 <?php
                 // $sql="SELECT * FROM `students`";
                 $sql="SELECT max(`school_num`) FROM `students`";
@@ -44,31 +44,31 @@ $pdo = new PDO($dsn, 'root', '');
                 <td><input type="text" name="school_num" id="" value="<?=$max+1;?>"></td>
             </tr>
             <tr>
-                <td>name</td>
+                <td>名子</td>
                 <td><input type="text" name="name" id=""></td>
             </tr>
             <tr>
-                <td>birthday</td>
+                <td>生日</td>
                 <td><input type="date" name="birthday" id=""></td>
             </tr>
             <tr>
-                <td>uni_id</td>
+                <td>身分證號</td>
                 <td><input type="text" name="uni_id" id=""></td>
             </tr>
             <tr>
-                <td>addr</td>
+                <td>地址</td>
                 <td><input type="text" name="addr" id=""></td>
             </tr>
             <tr>
-                <td>parents</td>
-                <td><input type="text" name="parants" id=""></td>
+                <td>家長</td>
+                <td><input type="text" name="parents" id=""></td>
             </tr>
             <tr>
-                <td>tel</td>
+                <td>電話</td>
                 <td><input type="text" name="tel" id=""></td>
             </tr>
             <tr>
-                <td>dept</td>
+                <td>科系</td>
                 <!-- <td><input type="number" name="dept" id=""></td> -->
                 <td>
                     <select name="dept" id="">
@@ -91,7 +91,7 @@ $pdo = new PDO($dsn, 'root', '');
                 </select> -->
             </tr>
             <tr>
-                <td>graduate_at</td>
+                <td>畢業國中</td>
                 <!-- <td><input type="number" name="graduate_at" id=""></td> -->
                 <td>
                 <select name="graduate_at" id="">
@@ -122,12 +122,20 @@ $pdo = new PDO($dsn, 'root', '');
             </tr>
             <tr>
                 <td>班級</td>
-                <td><input type="text" name="classes" id=""></td>
+                <td>
+                <select name='class_code' onchange='update.php'>
+                <?php
+                $sql="SELECT `id`,`code`,`name`
+                FROM `classes`";
+                $rows=$pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+                foreach($rows as $row){
+                    echo "<option value='{$row['code']}'>{$row['name']}</option>";
+                }
+                ?>
+                </select>
+                </td>
             </tr>
-            <tr>
-                <td>座號</td>
-                <td><input type="text" name="seat_num" id=""></td>
-            </tr>
+            
         </table>
         <input type="submit" value="確認新增">
     </form>
