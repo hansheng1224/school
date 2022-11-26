@@ -33,7 +33,8 @@ $sql_students="UPDATE `students`
     WHERE `is` = '$id'";
 
 $class_code=$_POST['class_code'];
-$school_num=$pdo->query("SELECT * from `students` WHERE `id` = 'id'")->fetch(PDO::FETCH_ASSOC);
+$school_num=$pdo->query("SELECT * from `students` WHERE `id` = '$id'")->fetch(PDO::FETCH_ASSOC);
+$class=$pdo->query("SELECT * FROM `class_student` WHERE `school_num`='{$school_num['school_num']}'")->fetch(PDO::FETCH_ASSOC);
 
 $sql_class_student="UPDATE `class_student` SET `class_code` = '$class_code' WHERE `id` = '{$class['id']}'";
 
