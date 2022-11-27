@@ -1,7 +1,6 @@
 <?php
 
-$dsn="mysql:host=localhost;charset=utf8;dbname=school";
-$pdo=new PDO($dsn,'root','');
+include "./DB/base.php";
 
 ?>
 <!DOCTYPE html>

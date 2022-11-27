@@ -16,8 +16,7 @@ if(!isset($_SESSION['login'])){
     <link rel="stylesheet" href="style.css">
 
     <?php
-    $dsn = "mysql:host=localhost;charset=utf8;dbname=school";
-    $pdo = new PDO($dsn, 'root', '');
+    include "./DB/base.php";
 
 
     if (isset($_GET['code'])) {

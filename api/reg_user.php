@@ -1,6 +1,5 @@
 <?php
-$dsn="mysql:host=localhost;charset=utf8;dbname=school";
-$pdo=new PDO($dsn,'root','');
+include "./DB/base.php";
 
 $acc=trim(strip_tags($_POST['acc']));
 $pwd=trim($_POST['pwd']);

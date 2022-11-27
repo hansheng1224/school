@@ -1,3 +1,6 @@
+<?php
+include "./DB/base.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,8 +12,7 @@
     <link rel="stylesheet" href="style.css">
 
     <?php
-    $dsn = "mysql:host=localhost;charset=utf8;dbname=school";
-    $pdo = new PDO($dsn, 'root', '');
+    
 
 
     if (isset($_GET['code'])) {
@@ -55,6 +57,10 @@
 
 <body>
 <?php
+include "./layouts/header.php";
+?>
+
+<?php
 if(isset($_GET['del'])){
     echo "<div class='del-msg'>";
     echo $_GET['del'];
@@ -64,12 +70,7 @@ if(isset($_GET['del'])){
 
 
     <h1 style="text-align:center">學生管理系統</h1>
-    <nav>
-        <a href="add.php">新增學生</a>
-        <a href="login.php">教師登入</a>
-        <a href="reg.php">教師註冊</a>
-    </nav>
-
+    
     <nav>
     <ul class="class-list">
     <?php

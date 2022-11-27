@@ -1,6 +1,5 @@
 <?php
-$dsn="mysql:host=localhost;charset=utf8;dbname=school";
-$pdo=new PDO($dsn,'root','');
+include "./DB/base.php";
 
 // $sql="DELETE FROM `students` WHERE `name`='陳彥明'";
 $student=$pdo->query("SELECT * FROM `students` WHERE `id` = '{$_GET['id']}'")->fetch(PDO::FETCH_ASSOC);
