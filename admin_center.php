@@ -1,11 +1,18 @@
+<?php
+session_start();
+if(!isset($_SESSION['login'])){
+    header("location:index.php");
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>學生管理系統</title>
+    <title>後臺管理中心</title>
     <link rel="stylesheet" href="style.css">
 
     <?php
@@ -51,10 +58,11 @@
 
     $rows = $pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
     ?>
-</head>
 
+</head>
 <body>
-<?php
+    <h1>後臺管理中心</h1>
+    <?php
 if(isset($_GET['del'])){
     echo "<div class='del-msg'>";
     echo $_GET['del'];
@@ -63,12 +71,12 @@ if(isset($_GET['del'])){
 ?>
 
 
-    <h1 style="text-align:center">學生管理系統</h1>
-    <nav>
-        <a href="add.php">新增學生</a>
-        <a href="login.php">教師登入</a>
-        <a href="reg.php">教師註冊</a>
-    </nav>
+<h1 style='text-align:center'>學生管理系統</h1>
+<nav>
+    <a href="add.php">新增學生</a>
+    <a href="logout.php">教師登出</a>
+
+</nav>
 
     <nav>
     <ul class="class-list">
@@ -259,5 +267,4 @@ if(isset($_GET['del'])){
         ?>
     </table>
 </body>
-
 </html>
