@@ -6,6 +6,7 @@ echo "<pre>";
 print_r($_POST);
 echo "</pre>";
 
+$id=$_POST['id'];
 // $school_num=$_POST['school_num'];
 $name=$_POST['name'];
 $birthday=$_POST['birthday'];
@@ -17,8 +18,7 @@ $dept=$_POST['dept'];
 $graduate_at=$_POST['graduate_at'];
 $status_code=$_POST['status_code'];
 
-//學員所屬班級在另一張資料class_student
-$class_code=$_POST['class_code'];
+
 
 $sql_students="UPDATE `students`
     SET `name`='$name',
@@ -30,8 +30,9 @@ $sql_students="UPDATE `students`
         `dept`='$dept',
         `graduate_at`='$graduate_at',
         `status_code`='$status_code'
-    WHERE `is` = '$id'";
+    WHERE `id` = '$id'";
 
+//學員所屬班級在另一張資料class_student
 $class_code=$_POST['class_code'];
 $school_num=$pdo->query("SELECT * from `students` WHERE `id` = '$id'")->fetch(PDO::FETCH_ASSOC);
 $class=$pdo->query("SELECT * FROM `class_student` WHERE `school_num`='{$school_num['school_num']}'")->fetch(PDO::FETCH_ASSOC);
@@ -45,7 +46,7 @@ echo "<br>";
 echo $sql_class_student;
 echo "<br>";
 
-$res1=$pdo->exec($sql_studemts);
+$res1=$pdo->exec($sql_students);
 $res2=$pdo->exec($sql_class_student);
 echo "編輯成功:";
 header("location:../index.php");

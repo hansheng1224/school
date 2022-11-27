@@ -25,7 +25,7 @@ if(isset($_GET['id'])){
 
 ?>
 
-<form action="api/edit_student.php" method="post">
+<form action="./api/edit_student.php" method="post">
     <table>
         <tr>
             <td>school_num</td>
@@ -86,7 +86,7 @@ if(isset($_GET['id'])){
                     $sql="SELECT * FROM `graduate_school`";
                     $grads=$pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
                     foreach($grads as $grad){
-                        $selected=($grad['id']==$students[`graduate_at`]?'selected':'');
+                        $selected=($grad['id']==$student['graduate_at']?'selected':'');
                         echo "<option value='{$grad['id']}' $selected>{$grad['county']}{$grad['name']}</option>";
                         // echo "<option value='{$grad['id']}'>{$grad['county']}{$grad['name']}</option>";
                     }
@@ -103,7 +103,7 @@ if(isset($_GET['id'])){
                     $sql="SELECT * FROM `status`";
                     $rows=$pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
                     foreach($rows as $row){
-                        $selected=($row[`code`]==$student[`status_code`])?'selectes':'';
+                        $selected=($row['code']==$student['status_code'])?'selected':'';
                         echo "<option value='{$row['code']}'$selected>{$row['status']}</option>";
                     }
                     ?>
@@ -117,8 +117,9 @@ if(isset($_GET['id'])){
                     <select name="class_code">
                     <?php
                     //從`classes`資料表中撈出所有的班級資料並在網頁上製作成下拉選單的項目
-                    // $sql="SELECT `id`,`code`,`name` FROM `classes`";
-                    $stu_class=$$pdo->query("SELECT * FROM `class_student` WHERE `school_mum`='{$students['school_num']}'")->fetch(PDO::FETCH_ASSOC);
+                    // $stu_class=$pdo->query("SELECT * FROM `class_student` WHERE `school_mum`='{$student['school_num']}'")->fetch(PDO::FETCH_ASSOC);
+                    $stu_class=$pdo->query("SELECT * FROM `class_student` WHERE `school_num`='{$student['school_num']}'")->fetch(PDO::FETCH_ASSOC);
+                    $sql="SELECT `id`,`code`,`name` FROM `classes`";
                     $rows=$pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
                     foreach($rows as $row){
                         $selected=($row['code']==$stu_class['class_code'])?'selected':'';
@@ -130,7 +131,7 @@ if(isset($_GET['id'])){
         </tr>
         <tr>
             <td>座號</td>
-            <td><?$stu_class['seat_num'];?></td>
+            <td><?=$stu_class['seat_num'];?></td>
         </tr>
     </table>
     <input type="hidden" name="id" value="<?=$student['id'];?>">
