@@ -4,7 +4,13 @@
     <!-- </pre> -->
 
 <?php
-$local=str_replace(['/練習PHP/1112-PHP-MYSQL/','.php'],'',$_SERVER['PHP_SELF']);
+$local=strrchr($_SERVER['PHP_SELF'],'/');
+echo $local;
+echo "<br>";
+$local=str_replace(['/','.php'],'',$local);
+echo $local;
+echo "<br>";
+// $local=str_replace(['/練習PHP/1112-PHP-MYSQL/','.php'],'',$_SERVER['PHP_SELF']);
 switch($local){
     case "index":
         echo "<a href='reg.php'>教師註冊</a>";
