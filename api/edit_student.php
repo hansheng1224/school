@@ -1,5 +1,5 @@
 <?php
-include "./DB/base.php";
+include "../DB/base.php";
 echo "<pre>";
 print_r($_POST);
 echo "</pre>";
@@ -47,5 +47,5 @@ echo "<br>";
 $res1=$pdo->exec($sql_students);
 $res2=$pdo->exec($sql_class_student);
 echo "編輯成功:";
-header("location:../index.php");
+header("location:../admin_center.php");
 ?>

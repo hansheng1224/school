@@ -1,6 +1,6 @@
 <?php
 
-include "./DB/base.php";
+include "../DB/base.php";
 
 ?>
 <!DOCTYPE html>
@@ -19,12 +19,12 @@ if(isset($_GET['id'])){
     $sql="SELECT * FROM `students` where `id` = '{$_GET['id']}'";
     $student=$pdo->query($sql)->fetch(PDO::FETCH_ASSOC);
 }else{
-    header("location:index.php?status=edit_error");
+    header("location:admin_center.php?status=edit_error");
 }
 
 ?>
 
-<form action="./api/edit_student.php" method="post">
+<form action="../api/edit_student.php" method="post">
     <table>
         <tr>
             <td>school_num</td>
@@ -134,7 +134,7 @@ if(isset($_GET['id'])){
         </tr>
     </table>
     <input type="hidden" name="id" value="<?=$student['id'];?>">
-    <input type="submit" value="確認新增">
+    <input type="submit" value="確認更新">
 </form>
 </body>
 </html>

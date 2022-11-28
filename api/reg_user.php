@@ -1,5 +1,5 @@
 <?php
-include "./DB/base.php";
+include "../DB/base.php";
 
 $acc=trim(strip_tags($_POST['acc']));
 $pwd=trim($_POST['pwd']);
@@ -18,5 +18,5 @@ echo "name=>".$name;
 echo "<br>";
 
 $pdo->exec($sql);
-header("lovation:../login.php");
+header("location:../front/login.php");
 ?>

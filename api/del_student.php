@@ -1,5 +1,5 @@
 <?php
-include "./DB/base.php";
+include "../DB/base.php";
 
 // $sql="DELETE FROM `students` WHERE `name`='陳彥明'";
 $student=$pdo->query("SELECT * FROM `students` WHERE `id` = '{$_GET['id']}'")->fetch(PDO::FETCH_ASSOC);
@@ -17,5 +17,5 @@ echo $res_student;
 echo "<br>";
 echo "刪除成功:";
 
-header("location:../index.php?del=已成功刪除學生{$student['name']}的所有資料！！");
+header("location:../admin_center.php?del=已成功刪除學生{$student['name']}的所有資料！！");
 ?>

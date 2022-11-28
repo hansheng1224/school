@@ -1,16 +1,10 @@
 <?php
-include "./DB/base.php";
+include "../DB/base.php";
 
 $student=$pdo->query("SELECT * FROM `students` WHERE `id`='{$_GET['id']}'")->fetch(PDO::FETCH_ASSOC);
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>確認刪除</title>
+
     <style>
         body{
             display: flex;
@@ -32,8 +26,7 @@ $student=$pdo->query("SELECT * FROM `students` WHERE `id`='{$_GET['id']}'")->fet
             font-weight: bolder;
         }
     </style>
-</head>
-<body>
+
     <div class='dialog'>
         <h1>卻認刪除</h1>
         <div class='msg'>
@@ -41,10 +34,8 @@ $student=$pdo->query("SELECT * FROM `students` WHERE `id`='{$_GET['id']}'")->fet
         </div>
         <br><br>
         <div>
-        <button onclick="location.href='./api/del_student.php?id=<?=$_GET['id'];?>'">確定刪除</button>
-        <button onclick="location.href='index.php'">取消</button>
+        <button onclick="location.href='../api/del_student.php?id=<?=$_GET['id'];?>'">確定刪除</button>
+        <button onclick="location.href='../admin_center.php'">取消</button>
     </div>
     </div>
     
-</body>
-</html>
