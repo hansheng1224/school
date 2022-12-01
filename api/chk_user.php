@@ -3,15 +3,15 @@ include "../DB/base.php";
 session_start();
 
 $acc = $_POST['acc'];
-$pwd = $_POST['pwd'];
+$pw = $_POST['pw'];
 
-$sql = "SELECT count(`id`) FROM `users` WHERE `acc`='$acc' && `pwd`='$pwd'";
+$sql = "SELECT count(`id`) FROM `users` WHERE `acc`='$acc' && `pw`='$pw'";
 $chk = $pdo->query($sql)->fetchColumn();
 
 //echo $chk;
 
 if ($chk == 1) {
-    $sql = "SELECT * from`users` WHERE `acc`='$acc' && `pwd`='$pwd'";
+    $sql = "SELECT * from`users` WHERE `acc`='$acc' && `pw`='$pw'";
     // $sql="SELECT `id`,`acc`,`pwd`,`name`,`last_login` from`users` WHERE `acc`='$acc' && `pwd`='$pwd'";
     $user = $pdo->query($sql)->fetch(PDO::FETCH_ASSOC);
     
@@ -27,6 +27,6 @@ if ($chk == 1) {
     }else{
         $_SESSION['login_try']=1;
     }
-    header("location:../front/login.php?error=login");
+    header("location:../index.php?do=login&error=login");
 }
 ?>

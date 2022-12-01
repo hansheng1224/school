@@ -2,15 +2,15 @@
 include "../DB/base.php";
 
 $acc=trim(strip_tags($_POST['acc']));
-$pwd=trim($_POST['pwd']);
+$pw=trim($_POST['pw']);
 $name=trim($_POST['name']);
 $email=trim($_POST['email']);
-$last_login=NULL;
 
-$sql="INSERT INTO `users`(`acc`,`pwd`,`name`,`email`,`last_login`) VALUE ('$acc','$pwd','$name','$email','$last_login')";
+
+$sql="INSERT INTO `users`(`acc`,`pw`,`name`,`email`,`last_login`) VALUES ('$acc','$pw','$name','$email',now())";
 echo "acc=>".$acc;
 echo "<br>";
-echo "password=>".$pwd;
+echo "password=>".$pw;
 echo "<br>";
 echo "email=>".$email;
 echo "<br>";
@@ -18,5 +18,5 @@ echo "name=>".$name;
 echo "<br>";
 
 $pdo->exec($sql);
-header("location:../front/login.php");
+header("location:../index.php?do=login");
 ?>
