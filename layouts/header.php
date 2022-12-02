@@ -44,7 +44,7 @@ switch($local){
         echo "</div>";
         echo "<div>";
         echo "<a href='admin_center.php?do=students_list'>學生管理</a>";
-        echo "<a href='admin_center.php?do=mews'>新聞管理</a>";
+        echo "<a href='admin_center.php?do=news'>新聞管理</a>";
         echo "</div>";
         echo "<div>";
         // echo "<a href='admin_center.php?do=add'>新增學生</a>";

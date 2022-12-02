@@ -18,9 +18,9 @@ if ($chk == 1) {
 
     $_SESSION['login']=$user;
     header("location:../admin_center.php");
-    // echo "<pre>";
-    // print_r($_SESSION['login']);
-    // echo "</pre>";
+    //  echo "<pre>";
+    //  print_r($_SESSION['login']);
+    //  echo "</pre>";
 }else{
     if(isset($_SESSION['login_try'])){
         $_SESSION['login_try']++;
