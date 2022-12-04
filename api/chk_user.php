@@ -1,6 +1,6 @@
 <?php
 include "../DB/base.php";
-session_start();
+// session_start();
 
 $acc = $_POST['acc'];
 $pw = $_POST['pw'];

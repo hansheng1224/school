@@ -1,7 +1,7 @@
 <div class="col-sm-3 mx-auto my-5 p-5 border shadows-sm">
 <h3 class='text-center'>教師登入</h3>
 <?php
-session_start();
+// session_start();
 if(isset($_GET['error'])){
     // header("location:../index.php?do=login");
     echo "<div>";

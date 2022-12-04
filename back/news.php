@@ -1,5 +1,5 @@
 <h1 class="text-center">新聞管理</h1>
-<a class="btn btm-primary" href="./admin_center.php?do=add_mews">新增消息</a>;
+<a class="btn btn-primary" href="./admin_center.php?do=add_news">新增消息</a>
 <hr>
 <ul class="list-group">
     <li class='list-group-item list-group-item-action d-flex text-center bg-info text-white'>

@@ -33,8 +33,8 @@ include "./DB/base.php";
     $file="./front/".$do.".php";
     if(file_exists($file)){
         include $file;
-    }else{
-        include "./front/main.php";
+    // }else{
+    //     include "./front/main.php";
     }
     ?>
 

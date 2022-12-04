@@ -215,8 +215,8 @@ include "./layouts/class_nav.php";
             echo "<td>{$row['畢業國中']}</td>";
             echo "<td>$age</td>";
             echo "<td>";
-            echo "<a href='./back/edit.php?id={$row['id']}'>編輯</a>";
-            echo "<a href='./back/confirm.php?id={$row['id']}'>刪除</a>";
+            echo "<a class='btn btn-info btn-sm mx-1' href='./admin_center.php?do=edit&id={$row['id']}'>編輯</a>";
+            echo "<a class='btn btn-danger btn-sm mx-1' href='./admin_center.php?do=confirm_del&id={$row['id']}'>刪除</a>";
             // echo "<a href='./api/del_student.php?id={$row['id']}'>刪除</a>";
             // echo "<a href='del.php?id={$row['id']}'>刪除</a>";
 

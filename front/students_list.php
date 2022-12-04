@@ -189,8 +189,6 @@ include "./layouts/class_nav.php";
             <td>生日</td>
             <td>畢業國中</td>
             <td>年齡</td>
-            <td>操作</td>
-
         </tr>
         <?php
         

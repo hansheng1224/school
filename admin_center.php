@@ -1,7 +1,11 @@
 <?php
+    include "./DB/base.php";
+    include "./layouts/header.php";
+    ?>
+<?php
 // session_start();
 if(!isset($_SESSION['login'])){
-    header("location:index.php");
+    header("location:./front/main.php");
     exit();
 }
 // echo "<pre>";
@@ -19,10 +23,7 @@ if(!isset($_SESSION['login'])){
     <?php include "./layouts/link_css.php";?>
     <link rel="stylesheet" href="style.css">
 
-    <?php
-    include "./DB/base.php";
-    include "./layouts/header.php";
-    ?>
+    
 
 </head>
 <body>
