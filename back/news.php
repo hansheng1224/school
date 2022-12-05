@@ -25,7 +25,7 @@ foreach($rows as $row){
     echo $row['readed'];
     echo "</div>";
     echo "<div class='col-md-2'>";
-    echo $row['create_at'];
+    echo $row['created_at'];
     echo "</div>";
     echo "<div class='col-md-2'>";
     echo "<a class='btn btn-info mx-2' href='./admin_center.php?do=news_edit&id={$row['id']}'>編輯</a>";
