@@ -169,9 +169,10 @@ function q($sql){
 }
 
 
+function to($location){
+    header("location:$location");
+}
 
 
 
-
-?>
 ?>
