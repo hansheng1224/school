@@ -33,6 +33,7 @@
         </div>
     </li>
     <?php
+    dd($survey);
         }
     ?>
 </ul>

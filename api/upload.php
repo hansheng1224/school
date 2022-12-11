@@ -10,7 +10,7 @@ if($_FILES['img']['error']==0){
     echo $_FILES['img']['size'];
     echo "<br>";
 
-    move_uploaded_file($_FILES['img']['tmp_name'],"../upload/".$_FILES['img']['tmp_name']);
+    move_uploaded_file($_FILES['img']['tmp_name'],"../upload/".$_FILES['img']['name']);
 
 }else{
     echo "檔案上傳失敗";
