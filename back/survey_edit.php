@@ -25,8 +25,9 @@ if(isset($_GET['id'])){
 
             <div class="form-group row col-11">
                 <label class="col-2 text-right">項目<?=$idx+1;?></label>
-                <input type="text" name='opt[]' value='<?=$option['opt'];?>' class="form-control col-10">
+                <input type="text" name='opt[]' value='<?=$option['opt'];?>' class="form-control col-9">
                 <input type="hidden" name='opt_id[]' value='<?=$option['id'];?>'>
+                <a href="./api/survey_option_del.php?id=<?=$option['id'];?>" class="btn btn-danger btn-sm py-0">-</a>
             </div>    
         <?php 
             }
